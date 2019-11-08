@@ -1,0 +1,22 @@
+<form class="form-inline">
+  <input name="searchInput" class="form-control" placeholder="Search" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
+  <button class="btn btn-outline-primary" (click)="searchText=''">x</button>
+</form>
+<table class="table table-sm">
+  <thead>
+      <th>place</th>
+      <th>number</th>
+      <th></th>
+  </thead>
+  <ng-container *ngFor="let data of dataArray">
+      <tr *ngIf="filterCondition(data)">
+          <td>{{data.place}}</td>
+          <td>{{data.number}}</td>
+          <td>
+            <button class="btn btn-info" (click)="locationService.populateForm(data)">Edit</button>
+              <button class="btn btn-danger" (click)="onDelete(data.$key)">Delete</button>
+          </td>
+      </tr>
+  </ng-container>
+</table>
+<div class="alert alert-danger" *ngIf="showDeletedMessage">Deleted successfully</div>
