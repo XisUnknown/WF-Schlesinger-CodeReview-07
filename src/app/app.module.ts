@@ -19,6 +19,7 @@ import { environment } from "../environments/environment";
 import { LocationComponent } from './location/location.component';
 import { LocationListComponent } from './location-list/location-list.component';
 import { AddlocationComponent } from './addlocation/addlocation.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AddlocationComponent } from './addlocation/addlocation.component';
     FooterComponent,
     LocationComponent,
     LocationListComponent,
-    AddlocationComponent
+    AddlocationComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
