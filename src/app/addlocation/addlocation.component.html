@@ -1,27 +1,28 @@
-<div class="row">
-  <div class="col-lg-9">
-    <form [formGroup]="this.locationService.form" (ngSubmit)="onSubmit()">
+<div class="container m-auto">
+<div class="row justify-content-center">
+  <div class="col-lg-12">
+    <form class="text-center mt-5" [formGroup]="this.locationService.form" (ngSubmit)="onSubmit()">
       <input type="hidden" formControlName="$key">
       <div class="form-group">
-        <label>Place</label>
+        <label class="font-weight-bold font-italic">Place</label>
         <input formControlName="place" class="form-control"
           [ngClass]="{'is-invalid':submitted && formControls.place.errors}">
         <div class="invalid-feedback" *ngIf="submitted && formControls.place.errors">This field is required</div>
       </div>
       <div class="form-group">
-        <label>Price</label>
+        <label class="font-weight-bold font-italic">Price</label>
         <input formControlName="price" class="form-control"
           [ngClass]="{'is-invalid':submitted && formControls.price.errors}">
         <div class="invalid-feedback" *ngIf="submitted && formControls.price.errors">This field is required</div>
       </div>
       <div class="form-group">
-        <label>Date</label>
+        <label class="font-weight-bold font-italic">Date</label>
         <input formControlName="date" class="form-control"
           [ngClass]="{'is-invalid':submitted && formControls.date.errors}">
         <div class="invalid-feedback" *ngIf="submitted && formControls.date.errors">This field is required</div>
       </div>
       <div class="form-group">
-        <label>URL Picture</label>
+        <label class="font-weight-bold font-italic">URL Picture</label>
         <input formControlName="url" class="form-control"
           [ngClass]="{'is-invalid':submitted && formControls.url.errors}">
         <div class="invalid-feedback" *ngIf="submitted && formControls.url.errors">This field is required</div>
@@ -34,4 +35,5 @@
       submitted successfully.
     </div>
   </div>
+</div>
 </div>
