@@ -1,22 +1,50 @@
-<form class="form-inline">
-  <input name="searchInput" class="form-control" placeholder="Search" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
-  <button class="btn btn-outline-primary" (click)="searchText=''">x</button>
-</form>
-<table class="table table-sm">
-  <thead>
-      <th>place</th>
-      <th>number</th>
-      <th></th>
-  </thead>
-  <ng-container *ngFor="let data of dataArray">
-      <tr *ngIf="filterCondition(data)">
-          <td>{{data.place}}</td>
-          <td>{{data.number}}</td>
-          <td>
-            <button class="btn btn-info" (click)="locationService.populateForm(data)">Edit</button>
-              <button class="btn btn-danger" (click)="onDelete(data.$key)">Delete</button>
-          </td>
-      </tr>
-  </ng-container>
-</table>
-<div class="alert alert-danger" *ngIf="showDeletedMessage">Deleted successfully</div>
+<div class="container-card w-100">
+  <form class="form-inline">
+    <input name="searchInput" class="form-control" placeholder="Search" #searchInput="ngModel" [(ngModel)]="searchText"
+      style="width: 80%;">
+    <button class="btn btn-outline-primary" (click)="searchText=''">x</button>
+  </form>
+  <div class="container">
+    <div class="card-deck">
+      <ng-container *ngFor="let data of dataArray">
+          <!-- Card -->
+          <div class="card promoting-card" *ngIf="filterCondition(data)">
+            <!-- Card content -->
+            <div class="card-body d-flex flex-row">
+              <!-- Content -->
+              <div>
+                <!-- Title -->
+                <h4 class="card-title font-weight-bold mb-2">{{data.place}}</h4>
+                <!-- Subtitle -->
+                <p class="card-text"><i class="far fa-clock pr-2"></i>07/24/2018</p>
+              </div>
+            </div>
+            <!-- Card image -->
+            <div class="view overlay">
+              <img class="card-img-top rounded-0"
+                src={{data.url}} alt="Card image cap">
+            </div>
+            <!-- Card content -->
+            <div class="card-body">
+
+                <!-- Text -->
+                <p class="display-4" id="collapseContent">Price: {{data.price}} Date:{{data.date}}</p>
+                <!-- Button -->
+                <a class="btn btn-flat red-text p-1 my-1 mr-0 mml-1 collapsed" data-toggle="collapse"
+                  href="#collapseContent" aria-expanded="false" aria-controls="collapseContent"></a>
+                <i class="fas fa-share-alt text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top"
+                  title="Share this post"></i>
+                <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top"
+                  title="I like it"></i>
+                <button class="btn btn-info" (click)="locationService.populateForm(data)">Edit</button>
+                <button class="btn btn-danger" (click)="onDelete(data.$key)">Delete</button>
+
+            </div>
+
+        </div>
+          <!-- Card -->
+      </ng-container>
+    </div>
+  </div>
+  <div class="alert alert-danger" *ngIf="showDeletedMessage">Deleted successfully</div>
+</div>

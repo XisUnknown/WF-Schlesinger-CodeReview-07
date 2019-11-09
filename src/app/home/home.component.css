@@ -1,0 +1,10 @@
+*{
+  height: 100vh;
+  background-image: url("https://nerdymates.com/static/img/regular/shutterstock_1044339595.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+h1{
+padding-top: 20vh;
+}

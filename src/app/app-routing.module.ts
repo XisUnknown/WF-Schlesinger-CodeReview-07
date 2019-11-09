@@ -11,8 +11,8 @@ const routes: Routes = [{
   path: "home",
   component: HomeComponent
 },{
-  path: "app-location",
-  component: LocationComponent
+  path: "app-location-list",
+  component: LocationListComponent
 },{
   path: "app-addlocation",
   component: AddlocationComponent

@@ -1,17 +1,30 @@
-<p>addlocation works!</p>
 <div class="row">
-  <div class="col-md-7">
+  <div class="col-lg-9">
     <form [formGroup]="this.locationService.form" (ngSubmit)="onSubmit()">
       <input type="hidden" formControlName="$key">
       <div class="form-group">
         <label>Place</label>
-        <input formControlName="place" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.place.errors}">
+        <input formControlName="place" class="form-control"
+          [ngClass]="{'is-invalid':submitted && formControls.place.errors}">
         <div class="invalid-feedback" *ngIf="submitted && formControls.place.errors">This field is required</div>
       </div>
       <div class="form-group">
-        <label>Number</label>
-        <input formControlName="number" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.number.errors}">
-        <div class="invalid-feedback" *ngIf="submitted && formControls.number.errors">This field is required</div>
+        <label>Price</label>
+        <input formControlName="price" class="form-control"
+          [ngClass]="{'is-invalid':submitted && formControls.price.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.price.errors">This field is required</div>
+      </div>
+      <div class="form-group">
+        <label>Date</label>
+        <input formControlName="date" class="form-control"
+          [ngClass]="{'is-invalid':submitted && formControls.date.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.date.errors">This field is required</div>
+      </div>
+      <div class="form-group">
+        <label>URL Picture</label>
+        <input formControlName="url" class="form-control"
+          [ngClass]="{'is-invalid':submitted && formControls.url.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.url.errors">This field is required</div>
       </div>
       <div class="form-group">
         <input type="submit" class="btn btn-primary" value="Submit">
